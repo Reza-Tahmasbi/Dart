@@ -1,4 +1,4 @@
-class Person{
+class abstract Person{
     String _name;
     int _id;
     String _phoneNumber;
@@ -9,6 +9,15 @@ class Person{
     int get id => _id;
     String get phoneNumber => _phoneNumber;
     String get address => _address;
+
+    void printPersianlInformation(){
+        print("Name: $_name");
+        print("ID: $_id");
+        print("Phone Number: $_phoneNumber");
+        print("Address: $_address");
+    }
+
+    void whatDoYouDo(){}
 }
 
 enum Certificate {
@@ -25,6 +34,11 @@ class Student extends Person{
     : super(name, id, phoneNumber, address);
     Student.English(String name, String phoneNumber, String address, this.studentID):fieldOfStudy = "English literature";
     : super (name, id, phoneNumber, address);
+
+    @override
+    void whatDoYouDo(){
+        print("I study $fieldOfStudy");
+    }
 }
 
 class Teacher extends Person{
@@ -32,4 +46,9 @@ class Teacher extends Person{
     int salary;
     Teacher(String name, String phoneNumber, String address, this.salary, this.Certificate)
     : super(name, id, phoneNumber, address);
+
+    @override
+    void whatDoYouDo(){
+        print("I teach");
+    }
 }
