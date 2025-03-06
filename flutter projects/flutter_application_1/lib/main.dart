@@ -38,10 +38,11 @@ class _MyAppState extends State<MyApp> {
       home: MyHomePage(
         toggleThemeMode: () {
           setState(() {
-            if (_themeMode == ThemeMode.dark)
+            if (_themeMode == ThemeMode.dark) {
               _themeMode = ThemeMode.light;
-            else
+            } else {
               _themeMode = ThemeMode.dark;
+            }
           });
         },
         selectedLanguageChanged: (_Language newSelectedLanguageByUser) {
@@ -99,7 +100,7 @@ class MyAppThemeConfig {
       brightness: Brightness.dark,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(primaryColor),
+          backgroundColor: WidgetStateProperty.all(primaryColor),
         ),
       ),
       scaffoldBackgroundColor: backgroundColor,
@@ -166,10 +167,9 @@ class MyHomePage extends StatefulWidget {
   final Function() toggleThemeMode;
   final Function(_Language _Language) selectedLanguageChanged;
   const MyHomePage(
-      {Key? key,
+      {super.key,
       required this.toggleThemeMode,
-      required this.selectedLanguageChanged})
-      : super(key: key);
+      required this.selectedLanguageChanged});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -456,14 +456,14 @@ class Skill extends StatelessWidget {
   final Function() onTap;
 
   const Skill({
-    Key? key,
+    super.key,
     required this.type,
     required this.title,
     required this.imagePath,
     required this.shadowColor,
     required this.isActive,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
