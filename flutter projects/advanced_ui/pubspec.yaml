@@ -35,10 +35,14 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   dotted_border: ^2.1.0
+  flutter_svg: ^2.0.17
+  smooth_page_indicator: ^1.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner:
+  flutter_gen_runner:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -64,6 +68,7 @@ flutter:
     - assets/img/posts/large/
     - assets/img/posts/small/
     - assets/img/stories/
+    - assets/img/background/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -76,7 +81,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: Avenir
       fonts:
         - asset: assets/fonts/avenir_bold.otf
           weight: 200
@@ -96,3 +101,7 @@ flutter:
         - asset: assets/fonts/AvenirLTProMediumOblique.otf
         - asset: assets/fonts/AvenirLTProOblique.otf
         - asset: assets/fonts/AvenirLTProRoman.otf
+
+flutter_gen:
+  integrations:
+    flutter_svg: true

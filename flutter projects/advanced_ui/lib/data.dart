@@ -142,4 +142,19 @@ class AppDatabase {
           imageFileName: 'small_post_3.jpg'),
     ];
   }
+  static List<OnboardingItem> get onboardingItems{
+    List<OnboardingItem> items = [];
+    for (var i = 0; i<4; i ++){
+    items.add(OnboardingItem("Read the article you want instantly",
+     "You can read thousands of articles on Blog Club, save them in the application and share them with your loved ones"));
+    }
+    return items;
+  }
+
+}
+
+class OnboardingItem{
+  final String title;
+  final String description;
+  OnboardingItem(this.title, this.description);
 }
