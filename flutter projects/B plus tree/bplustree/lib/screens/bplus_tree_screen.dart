@@ -1,13 +1,14 @@
 // import 'dart:ffi';
 
-import 'package:bplustree/widgets/controller_container_widget.dart';
+import 'package:bplustree/widgets/controller_widgets/controller_container_widget.dart';
+import 'package:bplustree/widgets/ui_tree/bplus_tree_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/bplus_tree_bloc.dart';
 import '../bloc/bplus_tree_event.dart';
 import '../bloc/bplus_tree_state.dart';
-import '../widgets/button_widget.dart';
+import '../widgets/controller_widgets/button_widget.dart';
 
 class BPlusTreeScreen extends StatelessWidget {
   const BPlusTreeScreen({super.key});
@@ -22,6 +23,13 @@ class BPlusTreeScreen extends StatelessWidget {
             return Column(
               children: [
                 ResponsiveContainer(),
+                const SizedBox(
+                  height: 16,
+                ),
+                Expanded(
+                    child: BPlusTreeWidget(
+                  root: state.tree.root,
+                ))
               ],
             );
           },
@@ -30,4 +38,3 @@ class BPlusTreeScreen extends StatelessWidget {
     );
   }
 }
-
